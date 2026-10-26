@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Folder, FolderOpen, FileCode, Copy, Check, Terminal, Play, GitBranch } from 'lucide-react';
+import { Folder, FolderOpen, Copy, Check, GitBranch } from 'lucide-react';
 import { Language } from '../types';
 import { projectStructureFiles } from '../data/content';
 
@@ -26,18 +26,18 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
   };
 
   return (
-    <section id="structure" className="py-16 lg:py-24 bg-[var(--bg)] border-b border-[var(--border)]">
+    <section id="structure" className="py-16 lg:py-24 bg-(--bg) border-b border-(--border)">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="text-xs md:text-sm font-bold text-[var(--color-active)] uppercase tracking-wider">
+          <div className="text-xs md:text-sm font-bold text-active uppercase tracking-wider">
             {isAr ? 'هندسة معمارية واضحة' : 'Modular Code Architecture'}
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[var(--text-h)]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-(--text-h)">
             {isAr ? 'هيكلية المشروع وتشغيله محلياً' : 'Project Structure & Quick Start'}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text)]">
+          <p className="text-sm sm:text-base text-(--text)">
             {isAr
               ? 'تصميم هيكلي منظم يسهل إضافة مميزات جديدة وتوزيع مهام التطوير بين فرق الواجهات والخلفيات.'
               : 'Enterprise module boundaries separating shared UI primitives from role-based feature folders.'}
@@ -48,16 +48,16 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* File Tree Explorer */}
-          <div className="lg:col-span-6 rounded-2xl border border-[var(--border)] bg-[var(--bg)] shadow-md overflow-hidden">
-            <div className="px-4 py-3 bg-[var(--code-bg)] border-b border-[var(--border)] flex items-center justify-between">
+          <div className="lg:col-span-6 rounded-2xl border border-(--border) bg-(--bg) shadow-md overflow-hidden">
+            <div className="px-4 py-3 bg-(--code-bg) border-b border-(--border) flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <FolderOpen className="w-4 h-4 text-[var(--color-active)]" />
-                <span className="font-mono text-xs font-bold text-[var(--text-h)]">Learnix / src /</span>
+                <FolderOpen className="w-4 h-4 text-active" />
+                <span className="font-mono text-xs font-bold text-(--text-h)">Learnix / src /</span>
               </div>
-              <span className="text-[11px] font-mono text-[var(--text)]">Feature-Sliced Design</span>
+              <span className="text-[11px] font-mono text-(--text)">Feature-Sliced Design</span>
             </div>
 
-            <div className="p-4 divide-y divide-[var(--border)] font-mono text-xs max-h-[460px] overflow-y-auto">
+            <div className="p-4 divide-y divide-(--border) font-mono text-xs max-h-115 overflow-y-auto">
               {projectStructureFiles.map((item, idx) => {
                 const isSelected = selectedFolder === item.path;
                 return (
@@ -66,15 +66,15 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
                     onClick={() => setSelectedFolder(item.path)}
                     className={`py-2.5 px-3 rounded-lg flex items-start justify-between gap-3 cursor-pointer transition-colors ${
                       isSelected
-                        ? 'bg-[var(--primary-light)] text-[var(--color-primary)] font-bold'
-                        : 'hover:bg-[var(--code-bg)] text-[var(--text-h)]'
+                        ? 'bg-(--primary-light) text-primary font-bold'
+                        : 'hover:bg-(--code-bg) text-(--text-h)'
                     }`}
                   >
                     <div className="flex items-center gap-2.5 shrink-0">
-                      <Folder className="w-4 h-4 text-[var(--color-active)]" />
+                      <Folder className="w-4 h-4 text-active" />
                       <span className="tracking-tight">{item.path}</span>
                     </div>
-                    <div className="text-[11px] font-sans text-[var(--text)] text-end truncate">
+                    <div className="text-[11px] font-sans text-(--text) text-end truncate">
                       {isAr ? item.descAr : item.descEn}
                     </div>
                   </div>
@@ -82,11 +82,11 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
               })}
             </div>
 
-            <div className="p-3 bg-[var(--primary-light)] border-t border-[var(--primary-border)] text-xs text-[var(--text-h)] flex items-center justify-between">
+            <div className="p-3 bg-(--primary-light) border-t border-(--primary-border) text-xs text-(--text-h) flex items-center justify-between">
               <span className="font-semibold">
                 {isAr ? 'المجلد النشط المحدد:' : 'Selected Module:'} <code className="text-xs bg-white dark:bg-slate-800 px-2 py-0.5 rounded">{selectedFolder}</code>
               </span>
-              <span className="text-[var(--color-active)] font-bold text-[11px]">
+              <span className="text-active font-bold text-[11px]">
                 {isAr ? 'جاهز للتطوير' : 'Ready'}
               </span>
             </div>
@@ -94,7 +94,7 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
 
           {/* Quick Start Terminal Guide */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="rounded-2xl border border-[var(--border)] bg-[#0d1117] text-slate-100 shadow-xl overflow-hidden font-mono text-xs">
+            <div className="rounded-2xl border border-(--border) bg-[#0d1117] text-slate-100 shadow-xl overflow-hidden font-mono text-xs">
               
               {/* Terminal Window Header */}
               <div className="px-4 py-3 bg-[#161b22] border-b border-[#30363d] flex items-center justify-between">
@@ -146,17 +146,17 @@ export const ProjectStructureSection: React.FC<ProjectStructureSectionProps> = (
                 <span className="text-slate-400">
                   {isAr ? 'رابط المعاينة المحلية:' : 'Local Preview Address:'}
                 </span>
-                <span className="text-[var(--color-active)] font-bold">
+                <span className="text-active font-bold">
                   http://localhost:5173
                 </span>
               </div>
             </div>
 
             {/* Git info */}
-            <div className="p-4 rounded-xl border border-[var(--border)] bg-[var(--bg)] flex items-center justify-between text-xs text-[var(--text)]">
+            <div className="p-4 rounded-xl border border-(--border) bg-(--bg) flex items-center justify-between text-xs text-(--text)">
               <div className="flex items-center gap-2">
-                <GitBranch className="w-4 h-4 text-[var(--color-active)]" />
-                <span className="font-semibold text-[var(--text-h)]">Main Branch: stable</span>
+                <GitBranch className="w-4 h-4 text-active" />
+                <span className="font-semibold text-(--text-h)">Main Branch: stable</span>
               </div>
               <span className="text-[11px]">{isAr ? 'متوافق مع npm و yarn و pnpm' : 'Supports npm, yarn & pnpm'}</span>
             </div>

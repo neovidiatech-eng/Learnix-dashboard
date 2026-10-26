@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Atom, Zap, Palette, Boxes, Compass, Table, BarChart3, CheckCircle2, Layers, Cpu, Code2 } from 'lucide-react';
+import { Atom, Zap, Palette, Boxes, Compass, Table, BarChart3, CheckCircle2, Cpu } from 'lucide-react';
 import { Language } from '../types';
 import { techStackData } from '../data/content';
 
@@ -29,7 +29,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
   const filteredItems = techStackData.filter((item) => getCategoryFilter(item.category));
 
   const renderIcon = (name: string) => {
-    const props = { className: 'w-6 h-6 text-[var(--color-primary)] dark:text-blue-400' };
+    const props = { className: 'w-6 h-6 text-primary dark:text-blue-400' };
     switch (name) {
       case 'Atom': return <Atom {...props} />;
       case 'Zap': return <Zap {...props} />;
@@ -44,18 +44,18 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
   };
 
   return (
-    <section id="tech-stack" className="py-16 lg:py-24 bg-[var(--bg)] border-b border-[var(--border)]">
+    <section id="tech-stack" className="py-16 lg:py-24 bg-(--bg) border-b border-(--border)">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="text-xs md:text-sm font-bold text-[var(--color-active)] uppercase tracking-wider">
+          <div className="text-xs md:text-sm font-bold text-active uppercase tracking-wider">
             {isAr ? 'بنية تحتية هندسية فائقة' : 'Engineered for Scale & Speed'}
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[var(--text-h)]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-(--text-h)">
             {isAr ? 'التقنيات المستخدمة في بناء المنصة' : 'Production-Grade Modern Tech Stack'}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text)]">
+          <p className="text-sm sm:text-base text-(--text)">
             {isAr
               ? 'تم بناء المنصة باستخدام أحدث التقنيات لضمان السرعة، الأمان، وسهولة الصيانة والتطوير المستقبلي.'
               : 'Constructed using industry-standard enterprise tooling designed for reactive UI, rigorous typing, and sub-millisecond execution.'}
@@ -63,15 +63,15 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
 
           {/* Category Tabs */}
           <div className="pt-2 flex items-center justify-center">
-            <div className="inline-flex p-1 rounded-xl bg-[var(--code-bg)] border border-[var(--border)] gap-1">
+            <div className="inline-flex p-1 rounded-xl bg-(--code-bg) border border-(--border) gap-1">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-3 sm:px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap shrink-0 ${
                     activeCategory === cat.id
-                      ? 'bg-[var(--bg)] text-[var(--text-h)] shadow-sm'
-                      : 'text-[var(--text)] hover:text-[var(--text-h)]'
+                      ? 'bg-(--bg) text-(--text-h) shadow-sm'
+                      : 'text-(--text) hover:text-(--text-h)'
                   }`}
                 >
                   {isAr ? cat.labelAr : cat.labelEn}
@@ -86,34 +86,34 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
           {filteredItems.map((tech, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg)] learnex-card-hover flex flex-col justify-between space-y-4"
+              className="p-5 rounded-2xl border border-(--border) bg-(--bg) learnex-card-hover flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--primary-light)] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-(--primary-light) flex items-center justify-center">
                     {renderIcon(tech.iconName)}
                   </div>
-                  <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-[var(--code-bg)] text-[var(--text)] border border-[var(--border)]">
+                  <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-(--code-bg) text-(--text) border border-(--border)">
                     {tech.badge}
                   </span>
                 </div>
 
                 <div>
-                  <div className="text-xs font-bold text-[var(--color-active)] tracking-wide">
+                  <div className="text-xs font-bold text-active tracking-wide">
                     {tech.category}
                   </div>
-                  <h3 className="text-base font-bold text-[var(--text-h)] mt-0.5">
+                  <h3 className="text-base font-bold text-(--text-h) mt-0.5">
                     {tech.name}
                   </h3>
                 </div>
 
-                <p className="text-xs text-[var(--text)] leading-relaxed">
+                <p className="text-xs text-(--text) leading-relaxed">
                   {isAr ? tech.roleAr : tech.roleEn}
                 </p>
               </div>
 
               {/* Status footer */}
-              <div className="pt-3 border-t border-[var(--border)] flex items-center justify-between text-[11px] text-[var(--text)]">
+              <div className="pt-3 border-t border-(--border) flex items-center justify-between text-[11px] text-(--text)">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   {isAr ? 'جاهز للإنتاج' : 'Production Ready'}
@@ -125,7 +125,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
         </div>
 
         {/* Highlight Architecture Banner */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[var(--primary)] to-[#1b507b] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div className="mt-12 p-6 rounded-2xl bg-linear-to-r from-(--primary) to-[#1b507b] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-1 text-center md:text-start">
             <h4 className="text-lg font-bold">
               {isAr ? 'هندسة معمارية نظيفة وقابلة للتوسع (Clean Architecture)' : 'Modular & Scalable Clean Architecture'}
