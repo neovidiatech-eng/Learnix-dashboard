@@ -1,6 +1,7 @@
 import React from 'react';
 import { Video, Mic, Clock, Globe2 } from 'lucide-react';
 import { Language } from '../types';
+import sessionLiveImg from '../assets/images/learnex_session_live_1792998229656.jpg';
 
 interface FeaturesOverviewProps {
   lang: Language;
@@ -67,7 +68,7 @@ export const FeaturesOverview: React.FC<FeaturesOverviewProps> = ({ lang, onOpen
           <div className="lg:col-span-6 relative">
             <div className="rounded-2xl overflow-hidden border border-(--border) shadow-xl bg-(--bg) group">
               <img
-                src="/src/assets/images/learnex_session_live_1792998229656.jpg"
+                src={sessionLiveImg}
                 alt="Learnex Live Interactive Classroom Session"
                 referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-[1.01]"

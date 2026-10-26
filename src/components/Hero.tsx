@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2, Play } from 'lucide-react';
 import { Language } from '../types';
+import heroPreviewImg from '../assets/images/learnex_hero_preview_1792998228978.jpg';
 
 interface HeroProps {
   lang: Language;
@@ -95,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenBooking, onExplorePortal
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-(--border) shadow-xl bg-(--bg) group">
               <img
-                src="/src/assets/images/learnex_hero_preview_1792998228978.jpg"
+                src={heroPreviewImg}
                 alt="Learnex Smart Language Learning Dashboard Interface"
                 referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-[1.02]"

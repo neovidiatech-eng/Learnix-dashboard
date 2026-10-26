@@ -23,6 +23,7 @@ import {
   Volume2
 } from 'lucide-react';
 import { Language, PortalType } from '../types';
+import portalsPreviewImg from '../assets/images/learnex_portals_preview_1792998229404.jpg';
 import { portalsData } from '../data/content';
 
 interface PortalsShowcaseProps {
@@ -377,7 +378,7 @@ export const PortalsShowcase: React.FC<PortalsShowcaseProps> = ({ lang, onOpenBo
             {/* Visual Isometric Asset Banner below mockup */}
             <div className="rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--bg)]">
               <img
-                src="/src/assets/images/learnex_portals_preview_1792998229404.jpg"
+                src={portalsPreviewImg}
                 alt="Learnex Portals Overview Architecture"
                 referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover"
