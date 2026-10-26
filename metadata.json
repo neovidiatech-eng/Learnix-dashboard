@@ -1,0 +1,6 @@
+{
+  "name": "Learnex - Smart Language Learning Platform",
+  "description": "منصة تعليم اللغات الذكية - Bilingual Arabic & English Landing Page with Live Virtual Classrooms, CEFR Curriculum, About Us, and Interactive Contact Us.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
