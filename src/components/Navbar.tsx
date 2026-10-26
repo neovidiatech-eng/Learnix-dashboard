@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Moon, Sun, Menu, X, Sparkles } from 'lucide-react';
+import { Globe, Moon, Sun, Menu, X } from 'lucide-react';
 import { Language } from '../types';
 
 interface NavbarProps {
@@ -103,15 +103,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         
 
-          {/* Primary Action Button */}
-          <button
-            onClick={onOpenBooking}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs md:text-sm font-bold text-white bg-active hover:bg-[#e06f17] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
-          >
-            <Sparkles className="w-4 h-4 me-1.5" />
-            {isAr ? 'احجز حصة تجريبية مجانية' : 'Book Free Trial Lesson'}
-          </button>
-
           {/* Mobile menu trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -125,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-(--border) bg-(--bg) px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="lg:hidden border-b border-(--border) bg-(--bg) px-4 pt-3 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-150">
           <div className="flex flex-col space-y-2">
             {navLinks.map((item) => (
               <button
@@ -136,18 +127,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {isAr ? item.labelAr : item.labelEn}
               </button>
             ))}
-          </div>
-
-          <div className="pt-2 border-t border-(--border)">
-            <button
-              onClick={() => {
-                onOpenBooking();
-                setMobileMenuOpen(false);
-              }}
-              className="w-full py-3 text-center text-sm font-bold text-white bg-active rounded-xl shadow-md"
-            >
-              {isAr ? 'احجز حصة تجريبية مجانية' : 'Book Free Trial Lesson'}
-            </button>
           </div>
         </div>
       )}

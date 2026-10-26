@@ -275,26 +275,6 @@ export const ContactUsSection: React.FC<ContactUsSectionProps> = ({ lang, onOpen
               </div>
             </div>
 
-            {/* Fast Action CTA Box */}
-            {onOpenBooking && (
-              <div className="p-6 rounded-2xl border border-(--primary-border) bg-linear-to-br from-(--primary-light) to-(--bg) text-center space-y-3 shadow-xs">
-                <h4 className="text-sm font-bold text-(--text-h)">
-                  {isAr ? 'هل تفضل تجربة المنصة مباشرة؟' : 'Prefer to experience the platform live?'}
-                </h4>
-                <p className="text-xs text-(--text)">
-                  {isAr
-                    ? 'احجز حصة تجريبية مجانية لمدة 25 دقيقة مع أحد المعلمين المتحدثين الأصليين.'
-                    : 'Book a 25-minute complimentary 1-on-1 trial session with a certified native tutor.'}
-                </p>
-                <button
-                  onClick={onOpenBooking}
-                  className="w-full py-2.5 rounded-xl bg-primary hover:bg-[#1a4d74] text-white text-xs font-bold transition-colors cursor-pointer shadow-xs"
-                >
-                  {isAr ? 'احجز حصتك التجريبية الآن' : 'Book Free Trial Lesson'}
-                </button>
-              </div>
-            )}
-
           </div>
 
         </div>

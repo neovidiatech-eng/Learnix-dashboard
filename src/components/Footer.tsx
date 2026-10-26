@@ -69,11 +69,6 @@ export const Footer: React.FC<FooterProps> = ({
                   {isAr ? 'تواصل معنا' : 'Contact Us'}
                 </a>
               </li>
-              <li>
-                <button onClick={onOpenBooking} className="text-start hover:text-active transition-colors cursor-pointer">
-                  {isAr ? 'حجز حصة تجريبية مجانية' : 'Book Free Trial Session'}
-                </button>
-              </li>
             </ul>
           </div>
 

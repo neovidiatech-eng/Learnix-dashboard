@@ -35,10 +35,10 @@ export default function App() {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
     if (lang === 'ar') {
-      document.body.style.fontFamily = '"Cairo", "Inter", sans-serif';
+      document.body.style.fontFamily = '"Tajawal", "Inter", sans-serif';
       document.title = 'Learnex | منصة تعليم اللغات التفاعلية والذكية';
     } else {
-      document.body.style.fontFamily = '"Inter", "Cairo", sans-serif';
+      document.body.style.fontFamily = '"Inter", "Tajawal", sans-serif';
       document.title = 'Learnex | Smart & Interactive Language Learning Platform';
     }
   }, [lang]);
@@ -80,7 +80,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-(--bg) text-(--text) transition-colors duration-200 ${lang === 'ar' ? 'font-sans' : ''}`}>
+    <div className="min-h-screen bg-(--bg) text-(--text) font-sans transition-colors duration-200">
       {/* Top Bar Navigation */}
       <Navbar
         lang={lang}

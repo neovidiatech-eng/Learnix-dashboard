@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, ShieldCheck, Lock, Printer, CheckCircle, Search, Mail } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, Lock, Printer, CheckCircle, Search } from 'lucide-react';
 import { Language } from '../types';
 import { privacyPolicyContent } from '../data/content';
 
@@ -155,32 +155,6 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({ lang, onBa
                 {isAr ? 'لم يتم العثور على بنود تطابق بحثك.' : 'No privacy clauses matched your search query.'}
               </div>
             )}
-
-            {/* Direct Contact Card for DPO */}
-            <div className="p-6 rounded-2xl bg-linear-to-br from-(--primary) to-[#1b507b] text-white space-y-4">
-              <div className="flex items-center gap-2">
-                <Mail className="w-5 h-5 text-active" />
-                <h3 className="text-base font-bold">
-                  {isAr ? 'مكتب حماية البيانات والامتثال (Data Protection Office)' : 'Data Protection Office (DPO)'}
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                {isAr
-                  ? 'إذا كنت ترغب في تصدير بياناتك، الاستفسار عن تسجيلات الحصص، أو تقديم طلب محو البيانات (Right to be Forgotten)، راسلنا على:'
-                  : 'To request data export, inspect live session logs, or exercise your right to erasure, contact our compliance desk directly:'}
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                <a
-                  href="mailto:privacy@learnex.org"
-                  className="px-4 py-2 rounded-xl bg-active hover:bg-[#e06f17] text-white text-xs font-bold transition-colors"
-                >
-                  privacy@learnex.org
-                </a>
-                <span className="text-xs text-slate-300">
-                  {isAr ? 'الرد خلال 48 ساعة كحد أقصى' : 'Guaranteed SLA under 48 hours'}
-                </span>
-              </div>
-            </div>
 
             {/* Bottom Back Button */}
             <div className="pt-4 text-center">

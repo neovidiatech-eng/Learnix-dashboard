@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2, Play } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Play } from 'lucide-react';
 import { Language } from '../types';
 import heroPreviewImg from '../assets/images/learnex_hero_preview_1792998228978.jpg';
 
@@ -70,18 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenBooking, onExplorePortal
               
             </div>
 
-            {/* Action Buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <button
-                onClick={onOpenBooking}
-                className="px-6 py-3.5 text-sm sm:text-base font-bold text-white bg-active hover:bg-[#df6f19] rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 shrink-0"
-              >
-                <span>{isAr ? 'احجز حصتك التجريبية الآن' : 'Start Your Free Trial Session'}</span>
-                {isAr ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
-              </button>
 
-              
-            </div>
 
             {/* Trust and Compliance indicator */}
             <div className="pt-2 flex items-center gap-4 text-xs text-(--text)">

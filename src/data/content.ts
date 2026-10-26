@@ -410,22 +410,5 @@ export const privacyPolicyContent = {
         'Guaranteed GDPR compliance: complete data portability (export) and right to be forgotten.',
       ],
     },
-    {
-      id: 'contact-dpo',
-      titleAr: '6. التواصل مع مسؤول حماية البيانات (DPO)',
-      titleEn: '6. Contact Data Protection Officer (DPO)',
-      descAr: 'إذا كانت لديك أي استفسارات أو رغبة في ممارسة حقوقك في الوصول لبياناتك أو تعديلها أو حذفها، يمكنك التواصل مباشرة مع مكتب الخصوصية لدينا:',
-      descEn: 'To exercise your rights of inspection, rectification, or data erasure, reach out directly to our dedicated Privacy Bureau:',
-      itemsAr: [
-        'البريد الإلكتروني للخصوصية: privacy@learnex.org',
-        'مكتب الامتثال القانوني: دعم فني مباشر متوفر على مدار الساعة داخل المنصة.',
-        'زمن الرد: نلتزم بالرد على طلبات الخصوصية خلال مدة لا تتجاوز 48 ساعة عمل.',
-      ],
-      itemsEn: [
-        'Data Protection Officer: privacy@learnex.org',
-        'Compliance & Privacy Desk: 24/7 dedicated in-app support chat.',
-        'Resolution Timeframe: Formal privacy requests resolved within 48 business hours.',
-      ],
-    },
   ],
 };
