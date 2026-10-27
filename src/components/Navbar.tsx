@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Globe, Menu, X } from 'lucide-react';
 import { Language } from '../types';

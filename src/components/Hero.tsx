@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {
   ArrowLeft,
@@ -10,7 +12,8 @@ import {
 } from 'lucide-react';
 import { Language } from '../types';
 import { heroContent } from '../data/content';
-import hero3dStudentImg from '../assets/images/hero_3d_student.jpg';
+
+const hero3dStudentImg = '/images/hero_3d_student.jpg';
 
 export interface HeroProps {
   lang: Language;

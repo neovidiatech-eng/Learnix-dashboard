@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, ShieldCheck, Lock, Printer, CheckCircle, Search, Mail } from 'lucide-react';
 import { Language } from '../types';

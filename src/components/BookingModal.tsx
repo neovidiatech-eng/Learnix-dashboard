@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useRef } from 'react';
 import { X, CheckCircle2, ArrowRight, ArrowLeft, Phone, Mail, User } from 'lucide-react';
 import { Language } from '../types';

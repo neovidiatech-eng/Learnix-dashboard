@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import { Video, Mic, Clock, Globe2 } from 'lucide-react';
 import { Language } from '../types';
-import sessionLiveImg from '../assets/images/learnex_session_live_1792998229656.jpg';
+
+const sessionLiveImg = '/images/learnex_session_live_1792998229656.jpg';
 
 interface FeaturesOverviewProps {
   lang: Language;

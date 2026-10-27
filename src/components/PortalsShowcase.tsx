@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import {
   ShieldAlert,
@@ -20,8 +22,9 @@ import {
   Volume2
 } from 'lucide-react';
 import { Language, PortalType } from '../types';
-import portalsPreviewImg from '../assets/images/learnex_portals_preview_1792998229404.jpg';
 import { portalsData } from '../data/content';
+
+const portalsPreviewImg = '/images/learnex_portals_preview_1792998229404.jpg';
 
 interface PortalsShowcaseProps {
   lang: Language;

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { MessageSquareText, Award, Clock , ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Language } from '../types';

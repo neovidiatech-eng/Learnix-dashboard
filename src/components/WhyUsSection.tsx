@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Sparkles, Layers, CalendarCheck2, TrendingUp, Headphones, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';

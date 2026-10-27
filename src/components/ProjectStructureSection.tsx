@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Folder, FolderOpen, Copy, Check, GitBranch } from 'lucide-react';
 import { Language } from '../types';

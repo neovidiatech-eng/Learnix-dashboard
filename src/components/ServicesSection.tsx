@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import { UserCheck, Users, GraduationCap, ShieldCheck, Building2, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
 import { servicesData } from '../data/content';
-import sessionLiveImg from '../assets/images/learnex_session_live_1792998229656.jpg';
+
+const sessionLiveImg = '/images/learnex_session_live_1792998229656.jpg';
 
 export interface ServicesSectionProps {
   lang: Language;

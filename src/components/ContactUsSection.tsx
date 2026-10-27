@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Mail, Phone, Send, Clock, CheckCircle2, Headphones, MessageSquare } from 'lucide-react';
 import { Language } from '../types';

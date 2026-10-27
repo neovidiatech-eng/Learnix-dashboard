@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Atom, Zap, Palette, Boxes, Compass, Table, BarChart3, CheckCircle2, Cpu } from 'lucide-react';
 import { Language } from '../types';
