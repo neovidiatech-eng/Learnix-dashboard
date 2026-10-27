@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { X, CheckCircle2, ArrowRight, ArrowLeft, Phone, Mail, User } from 'lucide-react';
 import { Language } from '../types';
 
-interface BookingModalProps {
+export interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
   lang: Language;
@@ -68,117 +68,117 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg rounded-2xl border border-(--border) bg-(--bg) shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden">
         
         {/* Header */}
-        <div className="px-6 py-4 bg-(--code-bg) border-b border-(--border) flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-xs">
+        <div className="px-6 py-5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center font-black text-sm">
               Lx
             </div>
             <div>
-              <h3 className="text-sm font-bold text-(--text-h)">
+              <h3 className="text-sm font-bold text-slate-900">
                 {isAr ? 'حجز حصة تجريبية واختبار تحديد المستوى' : 'Book Free Trial & Placement Test'}
               </h3>
-              <p className="text-[11px] text-(--text)">
-                {isAr ? 'خطوة 1 من 2 للبدء مع معلم أصلي' : 'Free 30-minute 1-on-1 session'}
+              <p className="text-xs text-slate-500">
+                {isAr ? 'جلسة مجانية فردية 30 دقيقة مع معلم أصلي' : 'Free 30-minute 1-on-1 session with a native tutor'}
               </p>
             </div>
           </div>
           <button
             onClick={resetModal}
-            className="p-1.5 rounded-lg text-(--text) hover:text-(--text-h) hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-200 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6">
+        <div className="p-6 sm:p-8">
           
           {/* Step 1: User & Course Selection Form */}
           {step === 1 && (
             <form onSubmit={handleSubmitStep1} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold text-(--text-h) mb-1">
-                  {isAr ? 'الاسم الكامل' : 'Full Name'}
+                <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                  {isAr ? 'الاسم الكامل' : 'Full Name'} <span className="text-active">*</span>
                 </label>
                 <div className="relative">
-                  <User className="w-4 h-4 text-(--text) absolute inset-s-3 top-1/2 -translate-y-1/2" />
+                  <User className="w-4 h-4 text-slate-400 absolute inset-s-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder={isAr ? 'مثال: أحمد محمد' : 'e.g. Alex Johnson'}
-                    className="w-full ps-9 pe-3 py-2 text-xs rounded-xl border border-(--border) bg-(--bg) text-(--text-h) focus:outline-none transition-colors"
+                    placeholder={isAr ? 'مثال: محمد أحمد' : 'e.g. Alex Johnson'}
+                    className="w-full ps-9 pe-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-white text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-semibold text-(--text-h) mb-1">
-                    {isAr ? 'البريد الإلكتروني' : 'Email Address'}
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    {isAr ? 'البريد الإلكتروني' : 'Email Address'} <span className="text-active">*</span>
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-(--text) absolute inset-s-3 top-1/2 -translate-y-1/2" />
+                    <Mail className="w-4 h-4 text-slate-400 absolute inset-s-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="name@example.com"
-                      className="w-full ps-9 pe-3 py-2 text-xs rounded-xl border border-(--border) bg-(--bg) text-(--text-h) focus:outline-none transition-colors"
+                      className="w-full ps-9 pe-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-white text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-(--text-h) mb-1">
-                    {isAr ? 'رقم الهاتف / واتساب' : 'Phone / WhatsApp'}
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                    {isAr ? 'رقم الواتساب' : 'Phone / WhatsApp'} <span className="text-active">*</span>
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-(--text) absolute inset-s-3 top-1/2 -translate-y-1/2" />
+                    <Phone className="w-4 h-4 text-slate-400 absolute inset-s-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="tel"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+966 50 123 4567"
-                      className="w-full ps-9 pe-3 py-2 text-xs rounded-xl border border-(--border) bg-(--bg) text-(--text-h) focus:outline-none transition-colors"
+                      className="w-full ps-9 pe-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-white text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-semibold text-(--text-h) mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
                     {isAr ? 'اللغة المستهدفة' : 'Target Language'}
                   </label>
                   <select
                     value={formData.language}
                     onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-(--border) bg-(--bg) text-(--text-h) focus:outline-none transition-colors"
+                    className="w-full px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-white text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors cursor-pointer"
                   >
                     <option value="English">{isAr ? 'الإنجليزية (English)' : 'English'}</option>
                     <option value="German">{isAr ? 'الألمانية (Deutsch)' : 'German'}</option>
                     <option value="French">{isAr ? 'الفرنسية (Français)' : 'French'}</option>
                     <option value="Spanish">{isAr ? 'الإسبانية (Español)' : 'Spanish'}</option>
-                    <option value="Arabic">{isAr ? 'العربية لغير الناطقين بها' : 'Arabic for Non-Natives'}</option>
+                    <option value="Turkish">{isAr ? 'التركية (Türkçe)' : 'Turkish'}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-(--text-h) mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
                     {isAr ? 'المستوى التقريبي' : 'Estimated Level'}
                   </label>
                   <select
                     value={formData.level}
                     onChange={(e) => setFormData({ ...formData, level: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded-xl border border-(--border) bg-(--bg) text-(--text-h) focus:outline-none transition-colors"
+                    className="w-full px-3 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-white text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors cursor-pointer"
                   >
                     <option value="Beginner">{isAr ? 'مبتدئ (A1 - A2)' : 'Beginner (A1 - A2)'}</option>
                     <option value="Intermediate">{isAr ? 'متوسط (B1 - B2)' : 'Intermediate (B1 - B2)'}</option>
@@ -188,42 +188,42 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-3">
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-active hover:bg-[#e06f17] text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-orange-500/20 hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>{isAr ? 'متابعة وتأكيد برمز التحقق' : 'Continue to Verification'}</span>
                   {isAr ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
                 </button>
               </div>
 
-              <div className="text-[11px] text-center text-(--text)">
+              <div className="text-[11px] text-center text-slate-500">
                 {isAr
-                  ? 'بالتسجيل، أنت توافق على سياسة الخصوصية وحماية البيانات في Learnex.'
-                  : 'By booking, you agree to Learnex Privacy & Data Protection Policy.'}
+                  ? 'بالتسجيل، أنت توافق على سياسة الخصوصية وحماية البيانات في Learnix.'
+                  : 'By booking, you agree to Learnix Privacy & Data Protection Policy.'}
               </div>
             </form>
           )}
 
-          {/* Step 2: Custom OTP Verification using the requested .custom-otp CSS class */}
+          {/* Step 2: Custom OTP Verification */}
           {step === 2 && (
             <div className="space-y-6 text-center">
               <div className="space-y-1">
-                <h4 className="text-base font-bold text-(--text-h)">
+                <h4 className="text-base font-bold text-slate-900">
                   {isAr ? 'أدخل رمز التحقق (OTP)' : 'Enter Verification Code (OTP)'}
                 </h4>
-                <p className="text-xs text-(--text)">
+                <p className="text-xs text-slate-600">
                   {isAr
                     ? `أرسلنا رمز تحقق مكون من 4 أرقام إلى ${formData.phone}`
                     : `We sent a 4-digit code to ${formData.phone}`}
                 </p>
-                <div className="text-[11px] font-mono text-active">
+                <div className="text-xs font-mono font-bold text-active bg-orange-50 inline-block px-3 py-1 rounded-full mt-1">
                   {isAr ? 'رمز تجريبي للاختبار: 2026' : 'Demo OTP Code: 2026'}
                 </div>
               </div>
 
-              {/* The custom-otp styled input container from prompt */}
+              {/* The custom-otp styled input container */}
               <div className="custom-otp flex items-center justify-center gap-3">
                 {otp.map((digit, idx) => (
                   <input
@@ -235,24 +235,24 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
                     value={digit}
                     onChange={(e) => handleOtpChange(idx, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(idx, e)}
-                    className="text-center font-mono border-2 border-(--border) bg-(--code-bg) text-(--text-h) focus:outline-none transition-colors"
+                    className="text-center font-mono border-2 border-slate-200 bg-slate-50 text-slate-900 outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                   />
                 ))}
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <button
                   type="button"
                   onClick={handleVerifyOtp}
-                  className="w-full py-3 rounded-xl bg-active hover:bg-[#e06f17] text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer"
+                  className="w-full py-3.5 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-orange-500/20 hover:shadow-lg transition-all cursor-pointer"
                 >
-                  {isAr ? 'تأكيد الحجز وتفعيل الحساب' : 'Verify & Confirm Booking'}
+                  {isAr ? 'تأكيد الحجز وتفعيل الحساب  ' : 'Verify & Confirm Booking  '}
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="text-xs text-(--text) hover:text-(--text-h) cursor-pointer"
+                  className="text-xs text-slate-500 hover:text-slate-900 cursor-pointer"
                 >
                   {isAr ? '← تعديل البيانات المدخلة' : '← Edit contact info'}
                 </button>
@@ -263,28 +263,28 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
           {/* Step 3: Success Confirmation */}
           {step === 3 && (
             <div className="space-y-5 text-center py-4">
-              <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 mx-auto flex items-center justify-center">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
 
               <div className="space-y-1">
-                <h4 className="text-xl font-black text-(--text-h)">
-                  {isAr ? 'تم تأكيد حجزك بنجاح!' : 'Your Session is Confirmed!'}
+                <h4 className="text-xl font-black text-slate-900">
+                  {isAr ? 'تم تأكيد حجزك بنجاح! 🎉' : 'Your Session is Confirmed! 🎉'}
                 </h4>
-                <p className="text-xs text-(--text) max-w-sm mx-auto">
+                <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
                   {isAr
                     ? `مرحباً ${formData.name}! تم حجز حصتك التجريبية في مسار ${formData.language}. ستصلك رسالة دعوة عبر البريد وواتساب برابط الغرفة الافتراضية.`
                     : `Welcome ${formData.name}! Your free placement session in ${formData.language} is scheduled. Class link sent to ${formData.email}.`}
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-(--primary-light) border border-(--primary-border) text-xs text-start space-y-1.5">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-start space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-(--text)">{isAr ? 'المعلم المعين:' : 'Assigned Tutor:'}</span>
-                  <span className="font-bold text-(--text-h)">Sarah M. (Native Speaker)</span>
+                  <span className="text-slate-500">{isAr ? 'المعلم المعين:' : 'Assigned Tutor:'}</span>
+                  <span className="font-bold text-slate-900">Sarah M. (Certified Native Speaker)</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-(--text)">{isAr ? 'موعد الحصة:' : 'Time Slot:'}</span>
+                  <span className="text-slate-500">{isAr ? 'موعد الحصة:' : 'Time Slot:'}</span>
                   <span className="font-mono text-active font-bold">{isAr ? 'غداً، 5:00 مساءً' : 'Tomorrow, 5:00 PM'}</span>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
               <button
                 type="button"
                 onClick={resetModal}
-                className="w-full py-2.5 rounded-xl bg-primary text-white text-xs font-bold cursor-pointer hover:bg-[#1a4d74] transition-colors"
+                className="w-full py-3 rounded-xl bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold cursor-pointer transition-colors"
               >
                 {isAr ? 'إغلاق والعودة للتصفح' : 'Close & Back to Portal'}
               </button>
@@ -304,3 +304,5 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, lan
     </div>
   );
 };
+
+export default BookingModal;

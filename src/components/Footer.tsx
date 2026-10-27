@@ -1,8 +1,9 @@
 import React from 'react';
-import { ShieldCheck, Github } from 'lucide-react';
+import { ShieldCheck, Mail, Phone } from 'lucide-react';
 import { Language } from '../types';
+import { contactInfoData } from '../data/content';
 
-interface FooterProps {
+export interface FooterProps {
   lang: Language;
   onNavigatePrivacy: () => void;
   onNavigateHome: () => void;
@@ -18,114 +19,137 @@ export const Footer: React.FC<FooterProps> = ({
   const isAr = lang === 'ar';
 
   return (
-    <footer className="bg-(--bg) border-t border-(--border) pt-12 pb-10 transition-colors">
+    <footer className="bg-primary text-white border-t border-primary-darker pt-14 pb-10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           
           {/* Brand info */}
-          <div className="md:col-span-5 space-y-3">
-            <div className="flex items-center gap-3">
+          <div className="md:col-span-5 space-y-4">
+            <button
+              onClick={onNavigateHome}
+              className="flex items-center gap-3 text-xl font-bold tracking-tight text-white group focus:outline-none cursor-pointer"
+            >
               <img
                 src="/logo.png"
-                alt="Learnex Logo"
-                className="h-9 w-auto max-h-10 object-contain"
+                alt="Learnix Logo"
+                className="h-9 w-auto max-h-10 object-contain brightness-0 invert"
               />
-              <span className="text-2xl font-black text-primary dark:text-white tracking-tight">
-                Learn<span className="text-active">ex</span>
+              <span className="text-2xl font-black text-white tracking-tight">
+                Learn<span className="text-active">ix</span>
               </span>
-            </div>
+            </button>
 
-            <p className="text-xs sm:text-sm text-(--text) leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-sm">
               {isAr
-                ? 'منصة ويب حديثة ومتكاملة لتعليم اللغات، تم تصميمها لتقديم تجربة تعليمية تفاعلية وممتازة لكل من الطلاب، المعلمين، ومديري النظام.'
-                : 'Modern integrated language learning platform designed to provide an interactive, premium experience for students, instructors, and admins.'}
+                ? 'المنصة الذكية الأولى لتعليم اللغات وإدارة الأكاديميات، تجمع بين نخبة المعلمين الأصليين وأحدث تقنيات الفصول التفاعلية لنقلك إلى الطلاقة التامة.'
+                : 'The premier smart platform for language acquisition and academy management, uniting certified native tutors with low-latency live classrooms.'}
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-(--text) pt-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              <span>{isAr ? 'بيئة تعليمية موثوقة ومشفرة بالكامل' : 'Encrypted & GDPR Compliant Learning Environment'}</span>
+            <div className="flex items-center gap-2 text-xs text-slate-300 pt-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>{isAr ? 'منصة آمنة ومشفرة بالكامل طبقاً لمعايير GDPR' : 'GDPR Compliant & Fully Encrypted Learning Suite'}</span>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Platform Sections Links */}
           <div className="md:col-span-3 space-y-3">
-            <div className="text-xs font-bold text-(--text-h) uppercase tracking-wider">
+            <div className="text-xs font-bold text-white uppercase tracking-wider">
               {isAr ? 'أقسام المنصة' : 'Platform Navigation'}
             </div>
-            <ul className="space-y-2 text-xs text-(--text)">
+            <ul className="space-y-2 text-xs text-slate-300">
               <li>
-                <a href="#features" onClick={onNavigateHome} className="hover:text-active transition-colors">
-                  {isAr ? 'أبرز المميزات' : 'Core Features'}
+                <a
+                  href="#about"
+                  onClick={onNavigateHome}
+                  className="hover:text-active transition-colors"
+                >
+                  {isAr ? 'عن المنصة' : 'About Learnix'}
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={onNavigateHome} className="hover:text-active transition-colors">
-                  {isAr ? 'من نحن' : 'About Learnex'}
+                <a
+                  href="#services"
+                  onClick={onNavigateHome}
+                  className="hover:text-active transition-colors"
+                >
+                  {isAr ? 'خدماتنا التعليمية' : 'Our Services'}
                 </a>
               </li>
               <li>
-                <a href="#contact" onClick={onNavigateHome} className="hover:text-active transition-colors">
+                <a
+                  href="#why-us"
+                  onClick={onNavigateHome}
+                  className="hover:text-active transition-colors"
+                >
+                  {isAr ? 'لماذا تختار Learnix؟' : 'Why Choose Learnix'}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={onNavigateHome}
+                  className="hover:text-active transition-colors"
+                >
                   {isAr ? 'تواصل معنا' : 'Contact Us'}
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={onOpenBooking}
+                  className="text-active hover:text-orange-300 font-bold hover:underline cursor-pointer"
+                >
+                  {isAr ? 'احجز حصتك التجريبية مجاناً ←' : 'Book Free Trial Class →'}
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Privacy & Legal */}
+          {/* Privacy & Direct Channels */}
           <div className="md:col-span-4 space-y-3">
-            <div className="text-xs font-bold text-(--text-h) uppercase tracking-wider">
-              {isAr ? 'الخصوصية والامتثال القانوني' : 'Legal & Privacy Governance'}
+            <div className="text-xs font-bold text-white uppercase tracking-wider">
+              {isAr ? 'الخصوصية والاتصال المباشر' : 'Privacy & Direct Channels'}
             </div>
-            <ul className="space-y-2 text-xs text-(--text)">
+            <ul className="space-y-2 text-xs text-slate-300">
               <li>
                 <button
                   onClick={onNavigatePrivacy}
-                  className="font-bold text-active hover:underline cursor-pointer text-start"
+                  className="font-bold text-white hover:text-active hover:underline cursor-pointer text-start"
                 >
-                  {isAr ? 'صفحة سياسة الخصوصية وحماية البيانات ←' : 'Privacy & Data Protection Policy →'}
+                  {isAr ? 'سياسة الخصوصية وحماية البيانات ←' : 'Privacy & Data Protection Policy →'}
                 </button>
               </li>
               <li>
-                <button onClick={onNavigatePrivacy} className="hover:text-active transition-colors text-start cursor-pointer">
-                  {isAr ? 'حوكمة تسجيلات الحصص المباشرة' : 'Live Class Video & Audio Governance'}
-                </button>
+                <div className="flex items-center gap-2 pt-1 text-xs">
+                  <Mail className="w-3.5 h-3.5 text-active" />
+                  <a href={`mailto:${contactInfoData.emailPrimary}`} className="font-mono text-slate-200 hover:text-active">
+                    {contactInfoData.emailPrimary}
+                  </a>
+                </div>
               </li>
               <li>
-                <button onClick={onNavigatePrivacy} className="hover:text-active transition-colors text-start cursor-pointer">
-                  {isAr ? 'حماية بيانات الأطفال (COPPA)' : 'Child Online Privacy (COPPA)'}
-                </button>
-              </li>
-              <li>
-                <a href="mailto:privacy@learnex.org" className="hover:text-active transition-colors">
-                  {isAr ? 'مسؤول حماية البيانات: privacy@learnex.org' : 'Contact DPO: privacy@learnex.org'}
-                </a>
+                <div className="flex items-center gap-2 text-xs">
+                  <Phone className="w-3.5 h-3.5 text-white" />
+                  <span className="font-mono text-slate-200" dir="ltr">{contactInfoData.phone1}</span>
+                </div>
               </li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-(--border) flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-(--text)">
-          <div>
-            © 2026 Learnex Inc. {isAr ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}
-          </div>
-
+        {/* Bottom Strip */}
+        <div className="pt-8 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+          <p>© {new Date().getFullYear()} Learnix Platform. {isAr ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}</p>
           <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/neovidiatech-eng/Learnix.git"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-(--text-h) transition-colors"
+            <button
+              onClick={onNavigatePrivacy}
+              className="hover:text-white transition-colors cursor-pointer"
             >
-              <Github className="w-3.5 h-3.5" />
-              <span>neovidiatech-eng/Learnix</span>
-            </a>
-            <span aria-hidden="true">·</span>
-            <button onClick={onNavigatePrivacy} className="hover:text-active cursor-pointer">
               {isAr ? 'سياسة الخصوصية' : 'Privacy Policy'}
             </button>
+            <span aria-hidden="true">·</span>
+            <span className="text-slate-400">CEFR A1-C2</span>
           </div>
         </div>
 
@@ -133,3 +157,5 @@ export const Footer: React.FC<FooterProps> = ({
     </footer>
   );
 };
+
+export default Footer;

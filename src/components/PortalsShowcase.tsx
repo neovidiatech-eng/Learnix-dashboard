@@ -14,7 +14,7 @@ import {
   GraduationCap,
   Video,
   TrendingUp,
-  Sparkles,
+
   ChevronRight,
   ChevronLeft,
   Volume2
@@ -50,7 +50,6 @@ export const PortalsShowcase: React.FC<PortalsShowcaseProps> = ({ lang, onOpenBo
       case 'GraduationCap': return <GraduationCap {...props} />;
       case 'Video': return <Video {...props} />;
       case 'TrendingUp': return <TrendingUp {...props} />;
-      case 'Sparkles': return <Sparkles {...props} />;
       default: return <FileText {...props} />;
     }
   };
