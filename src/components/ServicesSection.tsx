@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBo
                   ? 'بث مرئي فائق الوضوح، سبورة ذكية، تحليل فوري للموجات الصوتية ومخارج الحروف مع معلمك الأصلي.'
                   : 'Ultra-low latency audio/video, interactive whiteboard, live pronunciation waveform analysis.'}
               </p>
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-xs">
+              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-xs mt-5">
                 <img
                   src={sessionLiveImg}
                   alt="Learnix Live Classroom Interface"

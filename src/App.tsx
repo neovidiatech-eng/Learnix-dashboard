@@ -27,13 +27,20 @@ export default function App() {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
     if (lang === 'ar') {
-      document.body.style.fontFamily = '"Cairo", "Tajawal", "Inter", sans-serif';
+      document.body.style.fontFamily = '"Almarai", "Inter", sans-serif';
       document.title = 'Learnix | منصة تعليم اللغات التفاعلية والذكية';
     } else {
-      document.body.style.fontFamily = '"Inter", "Cairo", "Tajawal", sans-serif';
+      document.body.style.fontFamily = '"Inter", "Almarai", sans-serif';
       document.title = 'Learnix | Smart & Interactive Language Learning Platform';
     }
   }, [lang]);
+
+  // Always scroll to top immediately whenever currentView changes (fixes mobile bottom scroll issue)
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [currentView]);
 
   // Handle scroll to top visibility
   useEffect(() => {
@@ -111,7 +118,7 @@ export default function App() {
             lang={lang}
             onBackToHome={() => {
               setCurrentView('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
             }}
           />
         )}
@@ -122,7 +129,7 @@ export default function App() {
         lang={lang}
         onNavigatePrivacy={() => {
           setCurrentView('privacy');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         }}
         onNavigateHome={() => {
           setCurrentView('home');

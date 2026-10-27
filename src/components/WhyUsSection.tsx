@@ -98,7 +98,7 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({ lang, onOpenBooking 
             </p>
             <button
               onClick={onOpenBooking}
-              className="px-6 py-3 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-orange-500/20 hover:shadow-lg transition-all cursor-pointer"
+              className="px-6 py-3 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-orange-500/20 hover:shadow-lg transition-all cursor-pointer mt-5"
             >
               {isAr ? 'ابدأ تجربتك المجانية الآن' : 'Start Your Free Trial Now'}
             </button>
