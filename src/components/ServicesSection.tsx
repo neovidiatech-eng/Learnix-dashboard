@@ -1,31 +1,43 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { UserCheck, Users, GraduationCap, ShieldCheck, Building2, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react';
-import { Language } from '../types';
-import { servicesData } from '../data/content';
+import React from "react";
+import {
+  UserCheck,
+  Users,
+  GraduationCap,
+  ShieldCheck,
+  Building2,
+  Sparkles,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
+import { Language } from "../types";
+import { servicesData } from "../data/content";
 
-const sessionLiveImg = '/images/learnex_session_live_1792998229656.jpg';
+const sessionLiveImg = "/images/learnex_session_live_1792998229656.jpg";
 
 export interface ServicesSectionProps {
   lang: Language;
   onOpenBooking: () => void;
 }
 
-export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBooking }) => {
-  const isAr = lang === 'ar';
+export const ServicesSection: React.FC<ServicesSectionProps> = ({
+  lang,
+  onOpenBooking,
+}) => {
+  const isAr = lang === "ar";
 
   const getServiceIcon = (id: string) => {
     switch (id) {
-      case 'private-sessions':
+      case "private-sessions":
         return <UserCheck className="w-6 h-6 text-active" />;
-      case 'group-classes':
+      case "group-classes":
         return <Users className="w-6 h-6 text-primary" />;
-      case 'exam-prep':
+      case "exam-prep":
         return <GraduationCap className="w-6 h-6 text-info" />;
-      case 'certificates':
+      case "certificates":
         return <ShieldCheck className="w-6 h-6 text-success" />;
-      case 'corporate-solutions':
+      case "corporate-solutions":
         return <Building2 className="w-6 h-6 text-accent" />;
       default:
         return <Sparkles className="w-6 h-6 text-active" />;
@@ -33,33 +45,37 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBo
   };
 
   return (
-    <section id="services" className="py-10 lg:py-15 bg-white border-b border-slate-200">
+    <section
+      id="services"
+      className="py-10 lg:py-15 bg-white border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-primary text-xs font-bold uppercase tracking-wider">
-            <span>{isAr ? 'خدمات متكاملة' : 'Integrated Services'}</span>
+            <span>{isAr ? "خدمات متكاملة" : "Integrated Services"}</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0f172a] leading-tight">
             {isAr ? (
               <>
-                حلول تعليمية وتكنولوجية{' '}
+                حلول تعليمية وتكنولوجية{" "}
                 <span className="text-primary">صُممت لنجاحك</span>
               </>
             ) : (
               <>
-                Educational & Tech Solutions{' '}
-                <span className="text-primary">Engineered for Your Success</span>
+                Educational & Tech Solutions{" "}
+                <span className="text-primary">
+                  Engineered for Your Success
+                </span>
               </>
             )}
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {isAr
-              ? 'نقدم منظومة شاملة من الخدمات المصممة لتلبية احتياجات الطلاب الفرديين، المجموعات التفاعلية، والشركات مع أعلى معايير الجودة الأكاديمية.'
-              : 'Delivering a comprehensive suite of learning solutions crafted for individual learners, interactive cohorts, and enterprises with rigorous pedagogical standards.'}
+              ? "نقدم منظومة شاملة من الخدمات المصممة لتلبية احتياجات الطلاب الفرديين، المجموعات التفاعلية، والشركات مع أعلى معايير الجودة الأكاديمية."
+              : "Delivering a comprehensive suite of learning solutions crafted for individual learners, interactive cohorts, and enterprises with rigorous pedagogical standards."}
           </p>
         </div>
 
@@ -103,14 +119,17 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBo
                   onClick={onOpenBooking}
                   className="text-xs font-bold text-primary hover:text-active flex items-center gap-1.5 transition-colors cursor-pointer group-hover:underline"
                 >
-                  <span>{isAr ? 'ابدأ بهذه الخدمة' : 'Enroll in Service'}</span>
+                  <span>{isAr ? "ابدأ بهذه الخدمة" : "Enroll in Service"}</span>
                   {isAr ? (
                     <ArrowLeft className="w-3.5 h-3.5" />
                   ) : (
                     <ArrowRight className="w-3.5 h-3.5" />
                   )}
                 </button>
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: svc.color }} />
+                <div
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: svc.color }}
+                />
               </div>
             </div>
           ))}
@@ -122,20 +141,22 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBo
                 <span className="text-xs font-black px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
                   WebRTC HD Live
                 </span>
-                <span className="text-xs text-slate-500 font-mono">1080p / 60fps</span>
+                <span className="text-xs text-slate-500 font-mono">
+                  1080p / 60fps
+                </span>
               </div>
               <h3 className="text-lg font-bold text-[#0f172a]">
-                {isAr ? 'بيئة الفصول الحية الذكية' : 'Smart Live Classroom HUD'}
+                {isAr ? "بيئة الفصول الحية الذكية" : "Smart Live Classroom HUD"}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {isAr
-                  ? 'بث مرئي فائق الوضوح، سبورة ذكية، تحليل فوري للموجات الصوتية ومخارج الحروف مع معلمك الأصلي.'
-                  : 'Ultra-low latency audio/video, interactive whiteboard, live pronunciation waveform analysis.'}
+                  ? "بث مرئي فائق الوضوح، سبورة ذكية، تحليل فوري للموجات الصوتية ومخارج الحروف مع معلمك الأصلي."
+                  : "Ultra-low latency audio/video, interactive whiteboard, live pronunciation waveform analysis."}
               </p>
               <div className="rounded-xl overflow-hidden border border-slate-200 shadow-xs mt-5">
                 <img
                   src={sessionLiveImg}
-                  alt="Learnix Live Classroom Interface"
+                  alt="learnex Live Classroom Interface"
                   referrerPolicy="no-referrer"
                   className="w-full h-36 object-cover"
                 />
@@ -147,12 +168,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ lang, onOpenBo
                 onClick={onOpenBooking}
                 className="w-full py-2.5 rounded-xl bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors cursor-pointer text-center"
               >
-                {isAr ? 'تجربة الغرفة الافتراضية مجاناً' : 'Test Virtual Classroom Free'}
+                {isAr
+                  ? "تجربة الغرفة الافتراضية مجاناً"
+                  : "Test Virtual Classroom Free"}
               </button>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

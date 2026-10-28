@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Globe, Menu, X } from 'lucide-react';
-import { Language } from '../types';
+import React, { useState } from "react";
+import { Globe, Menu, X } from "lucide-react";
+import { Language } from "../types";
 
 export interface NavbarProps {
   lang: Language;
@@ -10,8 +10,8 @@ export interface NavbarProps {
   isDark?: boolean;
   onToggleTheme?: () => void;
   onOpenBooking: () => void;
-  currentView: 'home' | 'privacy';
-  onNavigate: (view: 'home' | 'privacy') => void;
+  currentView: "home" | "privacy";
+  onNavigate: (view: "home" | "privacy") => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -22,30 +22,45 @@ export const Navbar: React.FC<NavbarProps> = ({
   onNavigate,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isAr = lang === 'ar';
+  const isAr = lang === "ar";
 
   const navLinks = [
-    { id: 'about', labelAr: 'عن المنصة', labelEn: 'About Us', href: '#about' },
-    { id: 'services', labelAr: 'خدماتنا', labelEn: 'Services', href: '#services' },
-    { id: 'why-us', labelAr: 'لماذا نحن', labelEn: 'Why Us', href: '#why-us' },
-    { id: 'contact', labelAr: 'تواصل معنا', labelEn: 'Contact Us', href: '#contact' },
-    { id: 'privacy', labelAr: 'سياسة الخصوصية', labelEn: 'Privacy Policy', isAction: true },
+    { id: "about", labelAr: "عن المنصة", labelEn: "About Us", href: "#about" },
+    {
+      id: "services",
+      labelAr: "خدماتنا",
+      labelEn: "Services",
+      href: "#services",
+    },
+    { id: "why-us", labelAr: "لماذا نحن", labelEn: "Why Us", href: "#why-us" },
+    {
+      id: "contact",
+      labelAr: "تواصل معنا",
+      labelEn: "Contact Us",
+      href: "#contact",
+    },
+    {
+      id: "privacy",
+      labelAr: "سياسة الخصوصية",
+      labelEn: "Privacy Policy",
+      isAction: true,
+    },
   ];
 
-  const handleLinkClick = (link: typeof navLinks[0]) => {
+  const handleLinkClick = (link: (typeof navLinks)[0]) => {
     if (link.isAction) {
-      onNavigate('privacy');
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      onNavigate("privacy");
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     } else if (link.href) {
-      if (currentView !== 'home') {
-        onNavigate('home');
+      if (currentView !== "home") {
+        onNavigate("home");
         setTimeout(() => {
           const el = document.querySelector(link.href as string);
-          el?.scrollIntoView({ behavior: 'smooth' });
+          el?.scrollIntoView({ behavior: "smooth" });
         }, 100);
       } else {
         const el = document.querySelector(link.href);
-        el?.scrollIntoView({ behavior: 'smooth' });
+        el?.scrollIntoView({ behavior: "smooth" });
       }
     }
     setMobileMenuOpen(false);
@@ -54,18 +69,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-50 bg-primary border-b border-primary-darker transition-colors duration-200 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
-        
         {/* Zone 1: Brand Logo & Name */}
         <button
           onClick={() => {
-            onNavigate('home');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            onNavigate("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="flex items-center gap-3 text-xl font-bold tracking-tight text-white whitespace-nowrap shrink-0 group focus:outline-none cursor-pointer"
         >
           <img
             src="/logo.png"
-            alt="Learnix Logo"
+            alt="learnex Logo"
             className="h-10 w-auto max-h-11 object-contain transition-transform group-hover:scale-105 brightness-0 invert"
           />
           <span className="text-2xl font-black text-white tracking-tight">
@@ -80,9 +94,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               key={item.id}
               onClick={() => handleLinkClick(item)}
               className={`hover:text-active transition-colors whitespace-nowrap shrink-0 cursor-pointer text-sm font-semibold ${
-                currentView === 'privacy' && item.id === 'privacy'
-                  ? 'text-active font-bold border-b-2 border-active pb-0.5'
-                  : ''
+                currentView === "privacy" && item.id === "privacy"
+                  ? "text-active font-bold border-b-2 border-active pb-0.5"
+                  : ""
               }`}
             >
               {isAr ? item.labelAr : item.labelEn}
@@ -96,10 +110,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={onToggleLang}
             className="px-3.5 py-2 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
-            title={isAr ? 'Switch to English' : 'التحويل للغة العربية'}
+            title={isAr ? "Switch to English" : "التحويل للغة العربية"}
           >
             <Globe className="w-4 h-4 text-active" />
-            <span className="uppercase">{isAr ? 'English' : 'العربية'}</span>
+            <span className="uppercase">{isAr ? "English" : "العربية"}</span>
           </button>
 
           {/* Primary Action Button (Active Orange) */}
@@ -107,7 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onOpenBooking}
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-black/20 hover:shadow-lg transition-all cursor-pointer"
           >
-            <span>{isAr ? 'ابدأ الآن مجاناً' : 'Start Free Now'}</span>
+            <span>{isAr ? "ابدأ الآن مجاناً" : "Start Free Now"}</span>
           </button>
 
           {/* Mobile Menu Trigger */}
@@ -116,7 +130,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="lg:hidden p-2 rounded-xl text-white border border-white/20 hover:bg-white/10"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-white" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5 text-white" />
+            )}
           </button>
         </div>
       </div>
@@ -144,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full py-3 rounded-xl bg-active hover:bg-[#e06c12] text-white text-sm font-bold shadow-md text-center flex items-center justify-center gap-2"
             >
-              <span>{isAr ? 'ابدأ التعلم الآن مجاناً' : 'Start Free Now'}</span>
+              <span>{isAr ? "ابدأ التعلم الآن مجاناً" : "Start Free Now"}</span>
             </button>
           </div>
         </div>

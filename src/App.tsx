@@ -3,41 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AboutUsSection } from './components/AboutUsSection';
-import { ServicesSection } from './components/ServicesSection';
-import { WhyUsSection } from './components/WhyUsSection';
-import { ContactUsSection } from './components/ContactUsSection';
-import { PrivacyPolicyView } from './components/PrivacyPolicyView';
-import { BookingModal } from './components/BookingModal';
-import { Footer } from './components/Footer';
-import { Language } from './types';
-import { ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { AboutUsSection } from "./components/AboutUsSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { WhyUsSection } from "./components/WhyUsSection";
+import { ContactUsSection } from "./components/ContactUsSection";
+import { PrivacyPolicyView } from "./components/PrivacyPolicyView";
+import { BookingModal } from "./components/BookingModal";
+import { Footer } from "./components/Footer";
+import { Language } from "./types";
+import { ChevronUp } from "lucide-react";
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('ar');
-  const [currentView, setCurrentView] = useState<'home' | 'privacy'>('home');
+  const [lang, setLang] = useState<Language>("ar");
+  const [currentView, setCurrentView] = useState<"home" | "privacy">("home");
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Sync Language and Direction (RTL / LTR) & SEO Title
   useEffect(() => {
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = lang;
-    if (lang === 'ar') {
+    if (lang === "ar") {
       document.body.style.fontFamily = '"Almarai", "Inter", sans-serif';
-      document.title = 'Learnix | منصة تعليم اللغات التفاعلية والذكية';
+      document.title = "learnex | منصة تعليم اللغات التفاعلية والذكية";
     } else {
       document.body.style.fontFamily = '"Inter", "Almarai", sans-serif';
-      document.title = 'Learnix | Smart & Interactive Language Learning Platform';
+      document.title =
+        "learnex | Smart & Interactive Language Learning Platform";
     }
   }, [lang]);
 
   // Always scroll to top immediately whenever currentView changes (fixes mobile bottom scroll issue)
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }, [currentView]);
@@ -51,16 +52,16 @@ export default function App() {
         setShowScrollTop(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleLanguage = () => {
-    setLang((prev) => (prev === 'ar' ? 'en' : 'ar'));
+    setLang((prev) => (prev === "ar" ? "en" : "ar"));
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -76,15 +77,15 @@ export default function App() {
 
       {/* Main Content Router */}
       <main id="main-content">
-        {currentView === 'home' ? (
+        {currentView === "home" ? (
           <>
             {/* Section 1: Hero Section */}
             <Hero
               lang={lang}
               onOpenBooking={() => setIsBookingOpen(true)}
               onExplorePortals={() => {
-                const el = document.getElementById('services');
-                el?.scrollIntoView({ behavior: 'smooth' });
+                const el = document.getElementById("services");
+                el?.scrollIntoView({ behavior: "smooth" });
               }}
             />
 
@@ -100,7 +101,7 @@ export default function App() {
               onOpenBooking={() => setIsBookingOpen(true)}
             />
 
-            {/* Section 4: Why Us (لماذا تختار Learnix؟) */}
+            {/* Section 4: Why Us (لماذا تختار learnex؟) */}
             <WhyUsSection
               lang={lang}
               onOpenBooking={() => setIsBookingOpen(true)}
@@ -117,8 +118,8 @@ export default function App() {
           <PrivacyPolicyView
             lang={lang}
             onBackToHome={() => {
-              setCurrentView('home');
-              window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+              setCurrentView("home");
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
             }}
           />
         )}
@@ -128,11 +129,11 @@ export default function App() {
       <Footer
         lang={lang}
         onNavigatePrivacy={() => {
-          setCurrentView('privacy');
-          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          setCurrentView("privacy");
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
         }}
         onNavigateHome={() => {
-          setCurrentView('home');
+          setCurrentView("home");
         }}
         onOpenBooking={() => setIsBookingOpen(true)}
       />
@@ -149,7 +150,7 @@ export default function App() {
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 inset-e-6 z-40 p-3 rounded-full bg-primary hover:bg-primary-hover text-white shadow-xl hover:shadow-2xl transition-all duration-200 cursor-pointer focus:outline-none"
-          aria-label={lang === 'ar' ? 'الصعود لأعلى الصفحة' : 'Scroll to top'}
+          aria-label={lang === "ar" ? "الصعود لأعلى الصفحة" : "Scroll to top"}
         >
           <ChevronUp className="w-5 h-5" />
         </button>

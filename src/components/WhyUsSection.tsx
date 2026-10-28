@@ -1,45 +1,58 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Sparkles, Layers, CalendarCheck2, TrendingUp, Headphones, CheckCircle2, ShieldCheck } from 'lucide-react';
-import { Language } from '../types';
-import { whyUsData } from '../data/content';
+import React from "react";
+import {
+  Sparkles,
+  Layers,
+  CalendarCheck2,
+  TrendingUp,
+  Headphones,
+  CheckCircle2,
+  ShieldCheck,
+} from "lucide-react";
+import { Language } from "../types";
+import { whyUsData } from "../data/content";
 
 export interface WhyUsSectionProps {
   lang: Language;
   onOpenBooking: () => void;
 }
 
-export const WhyUsSection: React.FC<WhyUsSectionProps> = ({ lang, onOpenBooking }) => {
-  const isAr = lang === 'ar';
+export const WhyUsSection: React.FC<WhyUsSectionProps> = ({
+  lang,
+  onOpenBooking,
+}) => {
+  const isAr = lang === "ar";
 
   const iconsMap: Record<string, React.ReactNode> = {
-    '01': <Sparkles className="w-6 h-6 text-active" />,
-    '02': <Layers className="w-6 h-6 text-primary" />,
-    '03': <CalendarCheck2 className="w-6 h-6 text-accent" />,
-    '04': <TrendingUp className="w-6 h-6 text-success" />,
-    '05': <Headphones className="w-6 h-6 text-info" />,
+    "01": <Sparkles className="w-6 h-6 text-active" />,
+    "02": <Layers className="w-6 h-6 text-primary" />,
+    "03": <CalendarCheck2 className="w-6 h-6 text-accent" />,
+    "04": <TrendingUp className="w-6 h-6 text-success" />,
+    "05": <Headphones className="w-6 h-6 text-info" />,
   };
 
   return (
-    <section id="why-us" className="py-10 lg:py-15 bg-white border-b border-slate-200">
+    <section
+      id="why-us"
+      className="py-10 lg:py-15 bg-white border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-primary text-xs font-bold uppercase tracking-wider">
-            <span>{isAr ? 'الميزة التنافسية' : 'Competitive Edge'}</span>
+            <span>{isAr ? "الميزة التنافسية" : "Competitive Edge"}</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0f172a] leading-tight">
             {isAr ? (
               <>
-                لماذا نحن الخيار الأول لأكثر من{' '}
+                لماذا نحن الخيار الأول لأكثر من{" "}
                 <span className="text-active">2,500 متعلم</span>؟
               </>
             ) : (
               <>
-                Why Are We the Premier Choice for Over{' '}
+                Why Are We the Premier Choice for Over{" "}
                 <span className="text-active">2,500 Learners</span>?
               </>
             )}
@@ -47,8 +60,8 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({ lang, onOpenBooking 
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {isAr
-              ? 'صممنا تجربة Learnix لتتجاوز كل الصعوبات التقليدية لتعلم اللغات، من خلال دمج الكفاءة الأكاديمية الصارمة بأحدث التقنيات الرقمية.'
-              : 'Engineered from the ground up to eliminate traditional language hurdles by uniting elite certified pedagogy with frictionless digital tools.'}
+              ? "صممنا تجربة learnex لتتجاوز كل الصعوبات التقليدية لتعلم اللغات، من خلال دمج الكفاءة الأكاديمية الصارمة بأحدث التقنيات الرقمية."
+              : "Engineered from the ground up to eliminate traditional language hurdles by uniting elite certified pedagogy with frictionless digital tools."}
           </p>
         </div>
 
@@ -80,7 +93,11 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({ lang, onOpenBooking 
 
               <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-emerald-600">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
-                <span>{isAr ? 'ميزة حصرية ومضمونة بالمنصة' : 'Verified Learnix Platform Standard'}</span>
+                <span>
+                  {isAr
+                    ? "ميزة حصرية ومضمونة بالمنصة"
+                    : "Verified learnex Platform Standard"}
+                </span>
               </div>
             </div>
           ))}
@@ -91,22 +108,23 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({ lang, onOpenBooking 
               <ShieldCheck className="w-8 h-8 text-active" />
             </div>
             <h3 className="text-xl font-black text-primary">
-              {isAr ? 'ضمان الرضا والجودة بنسبة 100%' : '100% Quality & Satisfaction Guarantee'}
+              {isAr
+                ? "ضمان الرضا والجودة بنسبة 100%"
+                : "100% Quality & Satisfaction Guarantee"}
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 max-w-xs">
               {isAr
-                ? 'إذا لم تعجبك أول حصة تجريبية، يمكنك تغيير المعلم فوراً وبكل سهولة دون أي رسوم إضافية.'
-                : 'Not completely satisfied with your tutor? Switch instructors anytime with no friction or hidden fees.'}
+                ? "إذا لم تعجبك أول حصة تجريبية، يمكنك تغيير المعلم فوراً وبكل سهولة دون أي رسوم إضافية."
+                : "Not completely satisfied with your tutor? Switch instructors anytime with no friction or hidden fees."}
             </p>
             <button
               onClick={onOpenBooking}
               className="px-6 py-3 rounded-xl bg-active hover:bg-[#e06c12] text-white text-xs sm:text-sm font-bold shadow-md shadow-orange-500/20 hover:shadow-lg transition-all cursor-pointer mt-5"
             >
-              {isAr ? 'ابدأ تجربتك المجانية الآن' : 'Start Your Free Trial Now'}
+              {isAr ? "ابدأ تجربتك المجانية الآن" : "Start Your Free Trial Now"}
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );
