@@ -57,12 +57,12 @@ export const ContactUsSection: React.FC<ContactUsSectionProps> = ({ lang }) => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0f172a] leading-tight">
             {isAr ? (
               <>
-                فريق learnex{" "}
+                فريق Learnex{" "}
                 <span className="text-primary">في خدمتك على مدار الساعة</span>
               </>
             ) : (
               <>
-                The learnex Team{" "}
+                The Learnex Team{" "}
                 <span className="text-primary">at Your Service 24/7</span>
               </>
             )}
@@ -89,8 +89,8 @@ export const ContactUsSection: React.FC<ContactUsSectionProps> = ({ lang }) => {
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
                   {isAr
-                    ? "شكراً لتواصلك مع learnex. سيتواصل معك أحد مستشارينا الأكاديميين عبر البريد أو الواتساب خلال دقائق معدودة."
-                    : "Thank you for reaching out to learnex. One of our academic counselors will contact you via email or WhatsApp shortly."}
+                    ? "شكراً لتواصلك مع Learnex. سيتواصل معك أحد مستشارينا الأكاديميين عبر البريد أو الواتساب خلال دقائق معدودة."
+                    : "Thank you for reaching out to Learnex. One of our academic counselors will contact you via email or WhatsApp shortly."}
                 </p>
                 <div className="pt-4">
                   <button

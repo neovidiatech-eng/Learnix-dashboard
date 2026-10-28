@@ -4,7 +4,7 @@ import React from 'react';
 import { Video, Mic, Clock, Globe2 } from 'lucide-react';
 import { Language } from '../types';
 
-const sessionLiveImg = '/images/learnex_session_live_1792998229656.jpg';
+const sessionLiveImg = '/images/Learnex_session_live_1792998229656.jpg';
 
 interface FeaturesOverviewProps {
   lang: Language;
@@ -92,7 +92,7 @@ export const FeaturesOverview: React.FC<FeaturesOverviewProps> = ({ lang, onOpen
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl border border-(--border) bg-(--bg) learnex-card-hover flex items-start gap-4"
+                className="p-4 rounded-xl border border-(--border) bg-(--bg) Learnex-card-hover flex items-start gap-4"
               >
                 <div className="p-2.5 rounded-xl bg-(--primary-light) shrink-0">
                   {item.icon}

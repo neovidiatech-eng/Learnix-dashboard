@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-slate-300/70 bg-white group max-w-md w-full">
               <img
                 src={hero3dStudentImg}
-                alt="3D Animated Language Student Learning Online with learnex"
+                alt="3D Animated Language Student Learning Online with Learnex"
                 className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
 

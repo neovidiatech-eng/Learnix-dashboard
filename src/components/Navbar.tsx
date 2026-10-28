@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <img
             src="/logo.png"
-            alt="learnex Logo"
+            alt="Learnex Logo"
             className="h-10 w-auto max-h-11 object-contain transition-transform group-hover:scale-105 brightness-0 invert"
           />
           <span className="text-2xl font-black text-white tracking-tight">

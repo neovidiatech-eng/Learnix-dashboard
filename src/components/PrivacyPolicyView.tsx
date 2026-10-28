@@ -157,10 +157,10 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
                 </span>
               </div>
               <a
-                href="mailto:privacy@learnex.com"
+                href="mailto:privacy@Learnex.com"
                 className="font-mono text-primary hover:underline"
               >
-                privacy@learnex.com
+                privacy@Learnex.com
               </a>
             </div>
           </div>
@@ -216,7 +216,7 @@ export const PrivacyPolicyView: React.FC<PrivacyPolicyViewProps> = ({
               >
                 {isAr
                   ? "← العودة إلى الصفحة الرئيسية للمنصة"
-                  : "← Back to learnex Home Page"}
+                  : "← Back to Learnex Home Page"}
               </button>
             </div>
           </div>

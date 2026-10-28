@@ -260,8 +260,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               <div className="text-[11px] text-center text-slate-500">
                 {isAr
-                  ? "بالتسجيل، أنت توافق على سياسة الخصوصية وحماية البيانات في learnex."
-                  : "By booking, you agree to learnex Privacy & Data Protection Policy."}
+                  ? "بالتسجيل، أنت توافق على سياسة الخصوصية وحماية البيانات في Learnex."
+                  : "By booking, you agree to Learnex Privacy & Data Protection Policy."}
               </div>
             </form>
           )}

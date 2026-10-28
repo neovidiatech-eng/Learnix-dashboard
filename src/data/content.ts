@@ -399,14 +399,14 @@ export const projectStructureFiles = [
 ];
 
 export const privacyPolicyContent = {
-  titleAr: "سياسة الخصوصية وحماية البيانات | منصة learnex",
-  titleEn: "Privacy & Data Protection Policy | learnex Platform",
+  titleAr: "سياسة الخصوصية وحماية البيانات | منصة Learnex",
+  titleEn: "Privacy & Data Protection Policy | Learnex Platform",
   effectiveDateAr: "تاريخ النفاذ: أكتوبر 2026",
   effectiveDateEn: "Effective Date: October 2026",
   introAr:
-    "نلتزم في منصة learnex بأعلى معايير الأمان وحماية خصوصية بيانات طلابنا، معلمينا، وزوار منصتنا. توضح هذه الوثيقة آليات جمع واستخدام وحماية البيانات الشخصية وفقاً للمعايير الدولية الصارمة.",
+    "نلتزم في منصة Learnex بأعلى معايير الأمان وحماية خصوصية بيانات طلابنا، معلمينا، وزوار منصتنا. توضح هذه الوثيقة آليات جمع واستخدام وحماية البيانات الشخصية وفقاً للمعايير الدولية الصارمة.",
   introEn:
-    "At learnex, we are committed to upholding the highest standards of data protection and privacy for students, educators, and institutional partners, complying fully with international privacy standards including GDPR and regional regulations.",
+    "At Learnex, we are committed to upholding the highest standards of data protection and privacy for students, educators, and institutional partners, complying fully with international privacy standards including GDPR and regional regulations.",
   sections: [
     {
       id: "data-collection",
@@ -474,11 +474,11 @@ export const privacyPolicyContent = {
       descEn:
         "Uncompromising commitment to protecting learner data from commercial advertising:",
       itemsAr: [
-        "تلتزم learnex بشكل قاطع بعدم بيع أو تأجير أي بيانات شخصية لأي طرف ثالث بغرض التسويق التجاري.",
+        "تلتزم Learnex بشكل قاطع بعدم بيع أو تأجير أي بيانات شخصية لأي طرف ثالث بغرض التسويق التجاري.",
         "لا تتضمن واجهات المنصة أي برمجيات تتبع سلوكي أو كوكيز إعلانية تستهدف المتعلمين.",
       ],
       itemsEn: [
-        "learnex strictly pledges never to sell, rent, or lease any personal information to third parties for advertising or commercial marketing.",
+        "Learnex strictly pledges never to sell, rent, or lease any personal information to third parties for advertising or commercial marketing.",
         "Our learning interface is free from third-party behavioral trackers or commercial ad-targeting cookies.",
       ],
     },
@@ -491,11 +491,11 @@ export const privacyPolicyContent = {
         "Full governance and rights for users regarding their stored information:",
       itemsAr: [
         "يحق لك في أي وقت مراجعة بياناتك، تعديلها، طلب نسخة منها، أو طلب الحذف النهائي لحسابك.",
-        "يمكنك ممارسة أي من حقوقك عن طريق مراسلة مسؤول حماية البيانات مباشرة على: privacy@learnex.com.",
+        "يمكنك ممارسة أي من حقوقك عن طريق مراسلة مسؤول حماية البيانات مباشرة على: privacy@Learnex.com.",
       ],
       itemsEn: [
         "You have the legal right to access, inspect, modify, obtain a portable copy, or permanently delete your account data at any time.",
-        "Exercise any of your privacy rights directly by contacting our Data Protection Officer at: privacy@learnex.com.",
+        "Exercise any of your privacy rights directly by contacting our Data Protection Officer at: privacy@Learnex.com.",
       ],
     },
   ],
@@ -508,9 +508,9 @@ export const heroContent = {
   headlineAr: "اكسر حاجز اللغة.. وتحدث بطلاقة مع متحدثين أصليين حول العالم",
   headlineEn: "Break the Language Barrier & Speak Fluently with Native Tutors",
   subheadlineAr:
-    "تجمع منصة learnex بين أفضل المعلمين المعتمدين وأحدث التقنيات التفاعلية، لتمنحك حصصاً مباشرة، مسارات مخصصة لمستواك، وشهادات معتمدة تعزز مستقبلك المهني.",
+    "تجمع منصة Learnex بين أفضل المعلمين المعتمدين وأحدث التقنيات التفاعلية، لتمنحك حصصاً مباشرة، مسارات مخصصة لمستواك، وشهادات معتمدة تعزز مستقبلك المهني.",
   subheadlineEn:
-    "learnex connects ambitious learners with certified native tutors through interactive live sessions, personalized learning paths, and globally recognized certificates.",
+    "Learnex connects ambitious learners with certified native tutors through interactive live sessions, personalized learning paths, and globally recognized certificates.",
   primaryBtnAr: "ابدأ التعلم الآن مجاناً",
   primaryBtnEn: "Start Learning Free Now",
   secondaryBtnAr: "استكشف اللغات والكورسات",
@@ -545,14 +545,14 @@ export const heroContent = {
 
 // Section 2: About Us Data from LANDING_PAGE_CONTENT.md
 export const aboutUsContent = {
-  tagAr: "عن منصة learnex",
-  tagEn: "About learnex Platform",
+  tagAr: "عن منصة Learnex",
+  tagEn: "About Learnex Platform",
   headlineAr: "نبتكر تجربة تعليمية استثنائية تتجاوز الحدود الجغرافية",
   headlineEn: "Innovating an Exceptional Learning Experience Beyond Borders",
   bodyAr:
-    "انطلقت learnex بهدف إحداث ثورة في طريقة تعلم اللغات وإدارتها. نؤمن بأن تعلم أي لغة جديدة لا يتم عبر الحفظ والتلقين، بل من خلال الممارسة الحية والتواصل الإنساني المباشر. طوّرنا بيئة تعليمية ذكية ومتكاملة تخدم الطالب من خلال جلسات صوت وصورة عالية الدقة ومواد تفاعلية، وتُمكّن المعلمين والمشرفين من متابعة الأداء، الحضور، والتقارير المالية والتعليمية بكل سهولة واحترافية.",
+    "انطلقت Learnex بهدف إحداث ثورة في طريقة تعلم اللغات وإدارتها. نؤمن بأن تعلم أي لغة جديدة لا يتم عبر الحفظ والتلقين، بل من خلال الممارسة الحية والتواصل الإنساني المباشر. طوّرنا بيئة تعليمية ذكية ومتكاملة تخدم الطالب من خلال جلسات صوت وصورة عالية الدقة ومواد تفاعلية، وتُمكّن المعلمين والمشرفين من متابعة الأداء، الحضور، والتقارير المالية والتعليمية بكل سهولة واحترافية.",
   bodyEn:
-    "learnex was born to revolutionize how languages are learned and managed. We believe language acquisition does not happen through memorization, but through living conversation and authentic human connection. We engineered an intelligent, unified ecosystem delivering ultra-HD live video sessions, interactive media, and seamless performance tracking for students, tutors, and administrators.",
+    "Learnex was born to revolutionize how languages are learned and managed. We believe language acquisition does not happen through memorization, but through living conversation and authentic human connection. We engineered an intelligent, unified ecosystem delivering ultra-HD live video sessions, interactive media, and seamless performance tracking for students, tutors, and administrators.",
   pillars: [
     {
       titleAr: "الممارسة الواقعية",
@@ -714,14 +714,14 @@ export const whyUsData = [
 export const contactInfoData = {
   tagAr: "ابدأ محادثتك معنا",
   tagEn: "Start Your Conversation",
-  headlineAr: "فريق learnex في خدمتك على مدار الساعة",
-  headlineEn: "The learnex Team at Your Service 24/7",
+  headlineAr: "فريق Learnex في خدمتك على مدار الساعة",
+  headlineEn: "The Learnex Team at Your Service 24/7",
   descAr:
     "هل لديك استفسار حول خطط الأسعار؟ أو تحتاج مساعدة لتحديد مستواك الحالي؟ لا تتردد في مراسلتنا، ومستشارك التعليمي سيكون بانتظارك.",
   descEn:
     "Have questions regarding pricing plans or need guidance selecting the ideal starting level? Reach out anytime and an academic advisor will guide you.",
-  emailPrimary: "support@learnex.com",
-  emailSecondary: "admissions@learnex.com",
+  emailPrimary: "support@Learnex.com",
+  emailSecondary: "admissions@Learnex.com",
   phone1: "+966 50 000 0000",
   phone2: "+20 10 0000 0000",
   hoursAr: "24 ساعة / 7 أيام في الأسبوع",

@@ -24,7 +24,7 @@ import {
 import { Language, PortalType } from '../types';
 import { portalsData } from '../data/content';
 
-const portalsPreviewImg = '/images/learnex_portals_preview_1792998229404.jpg';
+const portalsPreviewImg = '/images/Learnex_portals_preview_1792998229404.jpg';
 
 interface PortalsShowcaseProps {
   lang: Language;
@@ -138,7 +138,7 @@ export const PortalsShowcase: React.FC<PortalsShowcaseProps> = ({ lang, onOpenBo
               {currentPortalData.features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-xl border border-(--border) bg-(--bg) learnex-card-hover space-y-2.5"
+                  className="p-4 rounded-xl border border-(--border) bg-(--bg) Learnex-card-hover space-y-2.5"
                 >
                   <div className="flex items-center justify-between">
                     <div className="w-9 h-9 rounded-lg bg-(--primary-light) flex items-center justify-center">
@@ -237,7 +237,7 @@ export const PortalsShowcase: React.FC<PortalsShowcaseProps> = ({ lang, onOpenBo
                     </div>
                     <div className="p-3 rounded-xl border border-dashed border-active/50 bg-active/5 flex items-center justify-between text-xs">
                       <div>
-                        <div className="font-mono font-bold text-active">LEARNEX_SPRING26</div>
+                        <div className="font-mono font-bold text-active">Learnex_SPRING26</div>
                         <div className="text-[11px] text-(--text)">{isAr ? 'خصم 25% على كورسات الإنجليزية المتقدمة' : '25% OFF Advanced English Tracks'}</div>
                       </div>
                       <span className="px-2 py-1 rounded bg-active text-white text-[10px] font-bold">

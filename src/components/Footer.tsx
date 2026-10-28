@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({
             >
               <img
                 src="/logo.png"
-                alt="learnex Logo"
+                alt="Learnex Logo"
                 className="h-9 w-auto max-h-10 object-contain brightness-0 invert"
               />
               <span className="text-2xl font-black text-white tracking-tight">
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onNavigateHome}
                   className="hover:text-active transition-colors"
                 >
-                  {isAr ? "عن المنصة" : "About learnex"}
+                  {isAr ? "عن المنصة" : "About Learnex"}
                 </a>
               </li>
               <li>
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onNavigateHome}
                   className="hover:text-active transition-colors"
                 >
-                  {isAr ? "لماذا تختار learnex؟" : "Why Choose learnex"}
+                  {isAr ? "لماذا تختار Learnex؟" : "Why Choose Learnex"}
                 </a>
               </li>
               <li>
@@ -153,7 +153,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
           <p>
-            © {new Date().getFullYear()} learnex Platform.{" "}
+            © {new Date().getFullYear()} Learnex Platform.{" "}
             {isAr ? "جميع الحقوق محفوظة." : "All rights reserved."}
           </p>
           <div className="flex items-center gap-4">

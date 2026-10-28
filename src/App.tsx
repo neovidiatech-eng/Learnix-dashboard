@@ -28,11 +28,11 @@ export default function App() {
     document.documentElement.lang = lang;
     if (lang === "ar") {
       document.body.style.fontFamily = '"Almarai", "Inter", sans-serif';
-      document.title = "learnex | منصة تعليم اللغات التفاعلية والذكية";
+      document.title = "Learnex | منصة تعليم اللغات التفاعلية والذكية";
     } else {
       document.body.style.fontFamily = '"Inter", "Almarai", sans-serif';
       document.title =
-        "learnex | Smart & Interactive Language Learning Platform";
+        "Learnex | Smart & Interactive Language Learning Platform";
     }
   }, [lang]);
 
@@ -101,7 +101,7 @@ export default function App() {
               onOpenBooking={() => setIsBookingOpen(true)}
             />
 
-            {/* Section 4: Why Us (لماذا تختار learnex؟) */}
+            {/* Section 4: Why Us (لماذا تختار Learnex؟) */}
             <WhyUsSection
               lang={lang}
               onOpenBooking={() => setIsBookingOpen(true)}

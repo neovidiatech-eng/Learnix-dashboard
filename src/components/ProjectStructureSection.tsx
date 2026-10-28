@@ -21,11 +21,11 @@ export const ProjectStructureSection: React.FC<
   const installCommands = [
     {
       title: isAr ? "نسخ المستودع البرمجي (Clone)" : "Clone Repository",
-      cmd: "git clone https://github.com/neovidiatech-eng/learnex.git",
+      cmd: "git clone https://github.com/neovidiatech-eng/Learnex.git",
     },
     {
       title: isAr ? "الدخول لمجلد المشروع" : "Change Directory",
-      cmd: "cd learnex",
+      cmd: "cd Learnex",
     },
     {
       title: isAr ? "تثبيت الحزم والاعتماديات" : "Install Dependencies",
@@ -74,7 +74,7 @@ export const ProjectStructureSection: React.FC<
               <div className="flex items-center gap-2">
                 <FolderOpen className="w-4 h-4 text-active" />
                 <span className="font-mono text-xs font-bold text-(--text-h)">
-                  learnex / src /
+                  Learnex / src /
                 </span>
               </div>
               <span className="text-[11px] font-mono text-(--text)">
@@ -130,7 +130,7 @@ export const ProjectStructureSection: React.FC<
                   <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                   <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
                   <span className="ms-2 text-slate-400 text-[11px]">
-                    bash — learnex Installation
+                    bash — Learnex Installation
                   </span>
                 </div>
                 <span className="text-slate-400 text-[10px]">Node.js v18+</span>

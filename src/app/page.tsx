@@ -68,7 +68,7 @@ export default function HomePage() {
         {/* Section 3: Services (خدماتنا) */}
         <ServicesSection lang={lang} onOpenBooking={openBooking} />
 
-        {/* Section 4: Why Us (لماذا تختار learnex؟) */}
+        {/* Section 4: Why Us (لماذا تختار Learnex؟) */}
         <WhyUsSection lang={lang} onOpenBooking={openBooking} />
 
         {/* Section 5: Contact Us (تواصل معنا) */}

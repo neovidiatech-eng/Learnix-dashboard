@@ -14,7 +14,7 @@ import {
 import { Language } from "../types";
 import { servicesData } from "../data/content";
 
-const sessionLiveImg = "/images/learnex_session_live_1792998229656.jpg";
+const sessionLiveImg = "/images/Learnex_session_live_1792998229656.jpg";
 
 export interface ServicesSectionProps {
   lang: Language;
@@ -156,7 +156,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               <div className="rounded-xl overflow-hidden border border-slate-200 shadow-xs mt-5">
                 <img
                   src={sessionLiveImg}
-                  alt="learnex Live Classroom Interface"
+                  alt="Learnex Live Classroom Interface"
                   referrerPolicy="no-referrer"
                   className="w-full h-36 object-cover"
                 />

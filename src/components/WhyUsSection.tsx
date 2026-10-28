@@ -60,7 +60,7 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {isAr
-              ? "صممنا تجربة learnex لتتجاوز كل الصعوبات التقليدية لتعلم اللغات، من خلال دمج الكفاءة الأكاديمية الصارمة بأحدث التقنيات الرقمية."
+              ? "صممنا تجربة Learnex لتتجاوز كل الصعوبات التقليدية لتعلم اللغات، من خلال دمج الكفاءة الأكاديمية الصارمة بأحدث التقنيات الرقمية."
               : "Engineered from the ground up to eliminate traditional language hurdles by uniting elite certified pedagogy with frictionless digital tools."}
           </p>
         </div>
@@ -96,7 +96,7 @@ export const WhyUsSection: React.FC<WhyUsSectionProps> = ({
                 <span>
                   {isAr
                     ? "ميزة حصرية ومضمونة بالمنصة"
-                    : "Verified learnex Platform Standard"}
+                    : "Verified Learnex Platform Standard"}
                 </span>
               </div>
             </div>

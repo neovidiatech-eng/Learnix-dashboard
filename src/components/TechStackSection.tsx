@@ -88,7 +88,7 @@ export const TechStackSection: React.FC<TechStackSectionProps> = ({ lang }) => {
           {filteredItems.map((tech, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl border border-(--border) bg-(--bg) learnex-card-hover flex flex-col justify-between space-y-4"
+              className="p-5 rounded-2xl border border-(--border) bg-(--bg) Learnex-card-hover flex flex-col justify-between space-y-4"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
